@@ -32,8 +32,9 @@ def main(x):
             inpt_chr = chr(inpt)
         except:
             inpt_chr = '-98'
+        inpt_chr = string.upper( inpt_chr )
         if inpt_chr in ascii_letters:
-            ascii_art = ascii_letters[ string.upper( inpt_chr ) ]
+            ascii_art = ascii_letters[ inpt_chr ]
             stdscr.clear() # Clear screen
             for y, line in enumerate(ascii_art.splitlines(), 4):
                 stdscr.addstr(y, 4, line)
