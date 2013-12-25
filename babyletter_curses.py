@@ -7,8 +7,8 @@ import time
 import curses
 import curses.wrapper
 
-def saxophone():
-    return """
+ascii_art = {}
+ascii_art['S'] = """
      _,-----,____g===;,
     <'.._____,-------g  ;
                        \   \,
@@ -711,7 +711,7 @@ def main(x):
         try:
             inpt_chr = chr(inpt)
         except:
-            inpt_chr = '-99'
+            inpt_chr = '-98'
         if inpt_chr in ascii_letters:
             ascii_art = ascii_letters[ string.upper( inpt_chr ) ]
             stdscr.clear() # Clear screen
