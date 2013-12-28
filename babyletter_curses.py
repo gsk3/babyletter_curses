@@ -17,6 +17,7 @@ def print_ascii( s, w, x=2 ):
         w.addstr(y, x, line)
 
 def main(x):
+    # Initialize curses
     stdscr = curses.initscr()
     curses.noecho() # Don't echo the characters to screen
     curses.cbreak() # Don't require an ENTER (buffered mode off)
@@ -34,10 +35,10 @@ def main(x):
             inpt_chr = '-98'
         inpt_chr = string.upper( inpt_chr )
         if inpt_chr in ascii_letters:
-            ascii_art = ascii_letters[ inpt_chr ]
             stdscr.clear() # Clear screen
-            for y, line in enumerate(ascii_art.splitlines(), 4):
-                stdscr.addstr(y, 4, line)
+            print_ascii( ascii_letters[ inpt_chr ], stdscr, 1 )
+        if inpt_chr in ascii_art:
+            print_ascii( ascii_art[ inpt_chr ], stdscr, 20 )
 
     # Terminate curses
     curses.nocbreak()
