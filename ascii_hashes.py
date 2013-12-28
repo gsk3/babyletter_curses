@@ -5,10 +5,47 @@ import string
 
 
 ascii_art = {}
+# http://www.retrojunkie.com/asciiart/animals/otters.htm
+ascii_art['O'] = """
+
+         .-'"'-.
+        /      o\\
+       |    o   0).-.
+       |       .-;(_/     .-.
+        \\     /  /)).---._|  `\\   ,
+         '.  '  /((       `'-./ _/|
+           \\  .'  )        .-.;`  /
+            '.             |  `\\-'
+              '._        -'    /
+                 ``''--`------`
+"""
+# http://www.retrojunkie.com/asciiart/vehicles/rockets.htm
+ascii_art['R'] = """
+                      *     .--.
+                           / /  '
+          +               | |
+                 '         \\ \\__,
+             *          +   '--'  *
+                 +   /\\
+    +              .'  '.   *
+           *      /======\\      +
+                 ;:.  _   ;
+                 |:. (_)  |
+                 |:.  _   |
+       +         |:. (_)  |          *
+                 ;:.      ;
+               .' \\:.    / '.
+              / .-'':._.''-. \\
+              |/    /||\\    \\|
+            _..--'''(())'''--.._
+      _.-'''                    '''-._
+    -'                                '-
+"""
+# Saxophone from patorjk.com
 ascii_art['S'] = """
      _,-----,____g===;,
     <'.._____,-------g  ;
-                       \   \,
+                       \\   \\,
                          q   q,
                           q    q,
                          [='     q
@@ -20,15 +57,17 @@ ascii_art['S'] = """
                              q:|   O| |BD
                                 [   | P b
                                 |   |  |____________
-                              [ |   |  |\         /
+                              [ |   |  |\\         /
                               | '   |  P :       ;
                               | [   0   Q:  ( )  ;
                                [ P  ( )  |;  ( ) ;
                                :Q  ( )  V        p
-                                \   [           ;
-                                 \',     O    /
+                                \\   [           ;
+                                 \\',     O    /
                                    ' ; _ . '
     """
+
+
 
 # Doh font from http://www.patorjk.com/software/taag/#p=display&h=0&v=0&f=Blocks&t=c
 
