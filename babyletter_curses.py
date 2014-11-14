@@ -11,10 +11,11 @@ from ascii_hashes import *
 
 
 # Print a multi-line string s to the curses window w
-  # x is the column number to start on
-def print_ascii( s, w, x=2 ):
-    for y, line in enumerate(s.splitlines(), x):
-        w.addstr(y, x, line)
+  # startx is the column number to start on
+  # starty is the row number to start on
+def print_ascii( s, w, startx = 1, starty = 1 ):
+    for y, line in enumerate(s.splitlines(), starty):
+        w.addstr(y, startx, line)
 
 def main(x):
     # Initialize curses
@@ -38,7 +39,7 @@ def main(x):
             stdscr.clear() # Clear screen
             print_ascii( ascii_letters[ inpt_chr ], stdscr, 1 )
         if inpt_chr in ascii_art:
-            print_ascii( ascii_art[ inpt_chr ], stdscr, 20 )
+            print_ascii( ascii_art[ inpt_chr ], stdscr, 1, 20 )
 
     # Terminate curses
     curses.nocbreak()
