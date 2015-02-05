@@ -7,6 +7,8 @@ import time
 import curses
 import curses.wrapper
 
+from pyfiglet import Figlet # letter library
+
 from ascii_hashes import *
 
 
@@ -24,6 +26,8 @@ def main(x):
     curses.cbreak() # Don't require an ENTER (buffered mode off)
     stdscr.keypad(1) # Interpret keypad characters properly
     curses.curs_set(0) # Cursor invisible
+    # Initialize pyfiglet
+    fglt = Figlet(font='doh') # font gallery here: http://www.figlet.org/examples.html
 
     # Write to screen
     inpt = 100
@@ -37,7 +41,11 @@ def main(x):
         inpt_chr = string.upper( inpt_chr )
         if inpt_chr in ascii_letters:
             stdscr.clear() # Clear screen
-            print_ascii( ascii_letters[ inpt_chr ], stdscr, 1 )
+            # Get letter from pyfiglet
+            inpt_ascii = fglt.renderText( inpt_chr )
+            # Print it to screen
+            #print_ascii( ascii_letters[ inpt_chr ], stdscr, 1 )
+            print_ascii( inpt_ascii, stdscr, 1 )
         if inpt_chr in ascii_art:
             print_ascii( ascii_art[ inpt_chr ], stdscr, 1, 20 )
 
