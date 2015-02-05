@@ -39,15 +39,15 @@ def main(x):
         except:
             inpt_chr = '-98'
         inpt_chr = string.upper( inpt_chr )
-        if inpt_chr in ascii_letters:
+        if inpt_chr in string.ascii_uppercase + "123456789" :
             stdscr.clear() # Clear screen
             # Get letter from pyfiglet
             inpt_ascii = fglt.renderText( inpt_chr )
             # Print it to screen
-            #print_ascii( ascii_letters[ inpt_chr ], stdscr, 1 )
             print_ascii( inpt_ascii, stdscr, 1 )
-        if inpt_chr in ascii_art:
-            print_ascii( ascii_art[ inpt_chr ], stdscr, 1, 20 )
+            # Print associated ASCII art if it exists
+            if inpt_chr in ascii_art:
+                print_ascii( ascii_art[ inpt_chr ], stdscr, 1, 20 )
 
     # Terminate curses
     curses.nocbreak()
